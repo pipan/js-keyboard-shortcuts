@@ -32,6 +32,7 @@ var KeyboardShortcutsService = (function () {
                 if (!_this.shortcutsReverse[handler]) {
                     return;
                 }
+                event.preventDefault();
                 _this.emitter.emit(_this.shortcutsReverse[handler], {
                     event: event,
                     hotkey: handler

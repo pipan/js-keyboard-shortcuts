@@ -30,6 +30,7 @@ export class KeyboardShortcutsService
                 if (!this.shortcutsReverse[handler]) {
                     return;
                 }
+                event.preventDefault();
                 this.emitter.emit(this.shortcutsReverse[handler], {
                     event: event,
                     hotkey: handler
