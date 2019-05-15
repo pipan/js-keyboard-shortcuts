@@ -1,6 +1,6 @@
 {
   "name": "@wildebeest/keyboard-shortcuts",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Keyboard shortcuts module for easier application controll",
   "main": "dist/index.js",
   "types": "./dist/index.d.ts",
