@@ -1,2 +1,2 @@
-export { KeyboardShortcutsModule } from '../src/KeyboardShortcutsModule';
-export { KeyboardShortcutsService } from '../src/KeyboardShortcutsService';
+export { KeyboardShortcutsModule } from './KeyboardShortcutsModule';
+export { KeyboardShortcutsService } from './KeyboardShortcutsService';
