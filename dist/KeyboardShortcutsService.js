@@ -25,7 +25,7 @@ var KeyboardShortcutsService = (function () {
     KeyboardShortcutsService.prototype.getEmitter = function () {
         return this.emitter;
     };
-    KeyboardShortcutsService.prototype.setShortcut = function (name, shortcut) {
+    KeyboardShortcutsService.prototype.nameShortcut = function (name, shortcut) {
         var _this = this;
         if (!this.shortcuts[name]) {
             this.combokeys.bind(shortcut, function (event, handler) {
@@ -41,6 +41,9 @@ var KeyboardShortcutsService = (function () {
         }
         this.shortcuts[name] = shortcut;
         this.shortcutsReverse[shortcut] = name;
+    };
+    KeyboardShortcutsService.prototype.on = function (name, callback) {
+        return this.getEmitter().on(name, callback);
     };
     KeyboardShortcutsService.prototype.all = function () {
         return this.shortcuts;

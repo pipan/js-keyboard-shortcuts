@@ -1,5 +1,5 @@
 import { injectable, inject } from "inversify";
-import { Emitter, EmitterService } from "@wildebeest/common";
+import { Emitter, EmitterService, Subscriber } from "@wildebeest/common";
 import * as Combokeys from 'combokeys';
 
 @injectable()
@@ -23,7 +23,7 @@ export class KeyboardShortcutsService
         return this.emitter;
     }
 
-    public setShortcut(name: string, shortcut: string): void
+    public nameShortcut(name: string, shortcut: string): void
     {
         if (!this.shortcuts[name]) {
             this.combokeys.bind(shortcut, (event: KeyboardEvent, handler: any) => {
@@ -40,6 +40,11 @@ export class KeyboardShortcutsService
         
         this.shortcuts[name] = shortcut;
         this.shortcutsReverse[shortcut] = name;
+    }
+
+    public on(name: string, callback: any): Subscriber
+    {
+        return this.getEmitter().on(name, callback);
     }
 
     public all(): any

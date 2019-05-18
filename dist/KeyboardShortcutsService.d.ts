@@ -1,4 +1,4 @@
-import { Emitter, EmitterService } from "@wildebeest/common";
+import { Emitter, EmitterService, Subscriber } from "@wildebeest/common";
 export declare class KeyboardShortcutsService {
     protected emitter: Emitter;
     protected shortcuts: any;
@@ -6,6 +6,7 @@ export declare class KeyboardShortcutsService {
     protected combokeys: any;
     constructor(emitterService: EmitterService);
     getEmitter(): Emitter;
-    setShortcut(name: string, shortcut: string): void;
+    nameShortcut(name: string, shortcut: string): void;
+    on(name: string, callback: any): Subscriber;
     all(): any;
 }

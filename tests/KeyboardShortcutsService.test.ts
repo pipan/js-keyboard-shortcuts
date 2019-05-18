@@ -88,40 +88,40 @@ beforeEach(() => {
 
 test("keyboard create shortcut a", () => {
     let value: number = 0;
-    keyboardShortcutsService.getEmitter().on("test", () => {
+    keyboardShortcutsService.on("test", () => {
         value = 1;
     });
-    keyboardShortcutsService.setShortcut("test", "a");
+    keyboardShortcutsService.nameShortcut("test", "a");
     simulateKeyboard("a");
     expect(value).toEqual(1);
 });
 
 test("keyboard create shortcut shift_b", () => {
     let value: number = 0;
-    keyboardShortcutsService.getEmitter().on("test", () => {
+    keyboardShortcutsService.on("test", () => {
         value = 1;
     });
-    keyboardShortcutsService.setShortcut("test", "B");
+    keyboardShortcutsService.nameShortcut("test", "B");
     simulateKeyboard("shift+B");
     expect(value).toEqual(1);
 });
 
 test("keyboard create shortcut ctrl_c", () => {
     let value: number = 0;
-    keyboardShortcutsService.getEmitter().on("test", () => {
+    keyboardShortcutsService.on("test", () => {
         value = 1;
     });
-    keyboardShortcutsService.setShortcut("test", "ctrl+c");
+    keyboardShortcutsService.nameShortcut("test", "ctrl+c");
     simulateKeyboard("ctrl+C");
     expect(value).toEqual(1);
 });
 
 test("keyboard create shortcut ctrl_shift_d", () => {
     let value: number = 0;
-    keyboardShortcutsService.getEmitter().on("test", () => {
+    keyboardShortcutsService.on("test", () => {
         value = 1;
     });
-    keyboardShortcutsService.setShortcut("test", "ctrl+shift+d");
+    keyboardShortcutsService.nameShortcut("test", "ctrl+shift+d");
     simulateKeyboard("ctrl+shift+D");
     expect(value).toEqual(1);
 });
